@@ -15,8 +15,6 @@ if __name__ == '__main__':
                     imgFormat, cv2.medianBlur(img, matsize))
         cv2.imwrite('bilateral' + str(matsize) +
                     imgFormat, cv2.bilateralFilter(img, matsize, 75, 75))
+
     cv2.imwrite('nonlocal' + imgFormat,
                 cv2.fastNlMeansDenoisingColored(img, None, 10, 10, 7, 21))
-
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
